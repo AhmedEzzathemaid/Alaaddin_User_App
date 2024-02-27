@@ -1,0 +1,6 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import '../models/onehundredtwentyone_item_model.dart';import 'package:abdelhamed_s_application9/presentation/onehundredtwentyone_bottomsheet/models/onehundredtwentyone_model.dart';part 'onehundredtwentyone_event.dart';part 'onehundredtwentyone_state.dart';/// A bloc that manages the state of a Onehundredtwentyone according to the event that is dispatched to it.
+class OnehundredtwentyoneBloc extends Bloc<OnehundredtwentyoneEvent, OnehundredtwentyoneState> {OnehundredtwentyoneBloc(OnehundredtwentyoneState initialState) : super(initialState) { on<OnehundredtwentyoneInitialEvent>(_onInitialize); }
+
+List<OnehundredtwentyoneItemModel> fillOnehundredtwentyoneItemList() { return [OnehundredtwentyoneItemModel(image: ImageConstant.imgRectangle22418), OnehundredtwentyoneItemModel(image: ImageConstant.imgRectangle22419)]; } 
+_onInitialize(OnehundredtwentyoneInitialEvent event, Emitter<OnehundredtwentyoneState> emit, ) async  { emit(state.copyWith(commentController: TextEditingController())); emit(state.copyWith(onehundredtwentyoneModelObj: state.onehundredtwentyoneModelObj?.copyWith(onehundredtwentyoneItemList: fillOnehundredtwentyoneItemList()))); } 
+ }

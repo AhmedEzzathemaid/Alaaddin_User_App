@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart';
+import 'package:abdelhamed_s_application9/core/app_export.dart';
+import 'package:abdelhamed_s_application9/widgets/custom_icon_button.dart';
+
+// ignore: must_be_immutable
+class AppbarLeadingIconbuttonOne extends StatelessWidget {
+  AppbarLeadingIconbuttonOne({
+    Key? key,
+    this.imagePath,
+    this.margin,
+    this.onTap,
+  }) : super(
+          key: key,
+        );
+
+  String? imagePath;
+
+  EdgeInsetsGeometry? margin;
+
+  Function? onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        onTap!.call();
+      },
+      child: Padding(
+        padding: margin ?? EdgeInsets.zero,
+        child: CustomIconButton(
+          height: 45.adaptSize,
+          width: 45.adaptSize,
+          decoration: IconButtonStyleHelper.fillLightGreen,
+          child: CustomImageView(
+            imagePath: ImageConstant.imgGroup1000001177,
+          ),
+        ),
+      ),
+    );
+  }
+}
